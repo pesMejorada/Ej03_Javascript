@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Banderas</title>
+<style type="text/css">
+     .estiloImagen{
+          width:100px;
+          margin:20px;
+          border:1px solid;
+          float:left;
+          }
+</style>
+<script type="text/javascript">
+    function zoomImagen(imagenBandera){
+    	imagenBandera.style.width="200px";
+     }
+    
+    function resetSize(imagenBandera){
+    	imagenBandera.style.width="100px";
+    }
+</script>
+</head>
+<body>
+<h1>Banderas de Europa</h1>
+ <img class="estiloImagen" src="imagenes/espanha.jpg" 
+      alt="Bandera de España" title="Bandera de España" 
+      onmouseover="zoomImagen(this);" onmouseout="resetSize(this);" />
+      
+  <img class="estiloImagen" src="imagenes/alemania.jpg" 
+      alt="Bandera de Alemania" title="Bandera de Alemania" 
+      onmouseover="zoomImagen(this);" onmouseout="resetSize(this);"/>
+      
+   <img class="estiloImagen" src="imagenes/francias.jpg" 
+  alt="Bandera de Francia" title="Bandera de Francia" 
+  onmouseover="zoomImagen(this);" onmouseout="resetSize(this);"/>
+  
+  <img class="estiloImagen" src="imagenes/italia.jpg" 
+ alt="Bandera de Italia" title="Bandera de Italia"
+  onmouseover="zoomImagen(this);" onmouseout="resetSize(this);"/> 
+  <p id="texto">
+  
+  </p>    
+
+</body>
+</html>
