@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Calculadora</title>
+	<script type="text/javascript">
+	
+	   function suma(){
+		   var resultado=document.getElementById("resultado");
+		   var numero1=document.getElementById("numero1");
+		   var numero2=document.getElementById("numero2");
+		   resultado.value= parseInt(numero1.value)+parseInt(numero2.value);
+	   }
+	   function resta(){
+		   var resultado=document.getElementById("resultado");
+		   var numero1=document.getElementById("numero1");
+		   var numero2=document.getElementById("numero2");
+		   resultado.value= parseInt(numero1.value)-parseInt(numero2.value);
+	   
+	   }
+	   function producto(){
+		   var resultado=document.getElementById("resultado");
+		   var numero1=document.getElementById("numero1");
+		   var numero2=document.getElementById("numero2");
+		   resultado.value= parseInt(numero1.value)*parseInt(numero2.value);
+	   }
+	   function cociente(){
+		   var resultado=document.getElementById("resultado");
+		   var numero1=document.getElementById("numero1");
+		   var numero2=document.getElementById("numero2");
+		   resultado.value= parseInt(numero1.value)/parseInt(numero2.value);
+	   }
+	   function borrar(){
+		   var resultado=document.getElementById("resultado");
+		   var numero1=document.getElementById("numero1");
+		   var numero2=document.getElementById("numero2");
+		   resultado.value="";
+		   numero1.value="";
+		   numero2.value="";
+	   }
+	</script>
+</head>
+<body>
+    <label>Número 1:</label>
+    <input type="text" id="numero1" value=""/>
+    <br/>
+     <label>Número 2:</label>
+    <input type="text" id="numero2" value=""/>
+    <br/>
+    <input type="button" value="+" id="suma" onclick="suma()"/>
+     <input type="button" value="-" id="resta" onclick="resta()"/>
+      <input type="button" value="*" id="producto" onclick="producto()"/>
+     <input type="button" value="/" id="cociente" onclick="cociente()"/>
+     <input type="button" value="C" id="borrar" onclick="borrar()"/>
+    <br/>
+    <label>Resultado:</label>
+    <input type="text" value="" id="resultado" readonly="readonly"/>
+    
+
+</body>
+</html>

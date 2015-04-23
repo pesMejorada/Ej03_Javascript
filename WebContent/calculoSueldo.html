@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cálculo de sueldos</title>
+<!--    Elaborar una página web que dado un salario anual bruto,
+        permita calcular:
+        1. Salario mensual bruto 
+        2. Valor descontado por SS
+           ss:  SS(5%) y  Desempleo(1.5%)
+        3. Valor descontado pòr IRPF
+        4. Salario Neto a pagar al empleado.
+         -->
+  <script type="text/javascript">
+    function calcularNomina(){
+    	var salarioBrutoAnual = document.getElementById("salarioBrutoAnual");
+    	var salarioBrutoMes = document.getElementById("salarioBrutoMes");
+    	var segSocial = document.getElementById("segSocial");
+    	var desempleo= document.getElementById("desempleo");
+    	var	irpf=document.getElementById("irpf");
+      	var netoMes=document.getElementById("netoMes");
+      	
+      	salarioBrutoMes.value= salarioBrutoAnual.value/12;
+      	segSocial.value= salarioBrutoMes.value * 5/100;
+      	desempleo.value=salarioBrutoMes.value * 1.5/100;
+      	irpf.value=salarioBrutoMes.value* 12/100;
+      	netoMes.value=salarioBrutoMes.value - segSocial.value - desempleo.value - irpf.value;
+      	/* 3. Hacer visibles */
+      	var cajasOcultas= document.getElementById("cajasOcultas");
+      	cajasOcultas.style.display="initial";
+      	/*4.  lo hacesi invisible en el html...*/
+    }
+    
+    function borrar(){
+    	var salarioBrutoAnual = document.getElementById("salarioBrutoAnual");
+    	var salarioBrutoMes = document.getElementById("salarioBrutoMes");
+    	var segSocial = document.getElementById("segSocial");
+    	var desempleo= document.getElementById("desempleo");
+    	var	irpf=document.getElementById("irpf");
+      	var netoMes=document.getElementById("netoMes");
+      	
+      	salarioBrutoAnual.value="";
+      	salarioBrutoMes.value="";
+      	segSocial.value="";
+      	desempleo.value="";
+      	irpf.value="";
+      	netoMes.value="";
+    	var cajasOcultas= document.getElementById("cajasOcultas");
+      	cajasOcultas.style.display="none";
+    }
+   </script> 
+  <style type="text/css">
+    .cajasOcultas{ display:none;}
+  </style>      
+</head>
+<body>
+<h1>Cálculo de nómina</h1>
+<label for="salarioBrutoAnual">Salario Bruto anual:</label>
+<input type="text" name="salarioBrutoAnual" id="salarioBrutoAnual" value=""/>
+<br/>
+<div class="cajasOcultas">
+	<label for="salarioBrutoMes">Salario Bruto mes:</label>
+	<input type="text" name="salarioBrutoMes" id="salarioBrutoMes" value="" readonly="readonly"/>
+	<br/>
+	
+	
+	<label for="segSocial">Seguridad Social:</label>
+	<input type="text" name="segSocial" id="segSocial" value="" readonly="readonly"/>
+	<br/>
+	
+	<label for="desempleo">Desempleo:</label>
+	<input type="text" name="desempleo" id="desempleo" value="" readonly="readonly"/>
+	<br/>
+	
+	<label for="irpf">IRPF:</label>
+	<input type="text" name="irpf" id="irpf" value="" readonly="readonly"/>
+	<br/>
+	
+	<label for="netoMes">Neto/mes:</label>
+	<input type="text" name="netoMes" id="netoMes" value="" readonly="readonly"/>
+	<br/>
+</div>
+<input type="button" name="calcular" id="calcular" value="Calcular" onclick="calcularNomina();" />
+<input type="button" name="borrar" id="borrar" value="Borrar" onclick="borrar(); hacerDesaparecer();" />
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
