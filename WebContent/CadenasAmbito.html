@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+  function concatenar(){
+	  var numero1= document.getElementById("numero1");
+	  var numero2= document.getElementById("numero2");
+	  var textoConcatenado = document.getElementById("textoConcatenado");
+	  var texto= document.getElementById("texto");
+	  
+	  // poner en textoConcatenado la suma de numero1 + numero2
+	  //textoConcatenado.innerHTML= numero1.value + numero2.value;
+	  // otra forma : usando funciones de cadena
+	  textoConcatenado.innerHTML= numero1.value.concat(numero2.value);
+	  
+	  //innerHtml - sireve para escribir texto html dentro de una etiqueta-html
+	  }
+     function convertirMayuscula(){
+    	var texto = document.getElementById("texto");
+    	texto.value=texto.value.toUpperCase();
+    }
+     function convertirMinuscula(){
+     	var texto = document.getElementById("texto");
+     	texto.value=texto.value.toLowerCase();
+     }
+     function trocear(){
+    	 var texto = document.getElementById("texto");
+    	
+    	 texto.value=texto.value.split(" ");
+    	 
+       }
+     function unir(){
+    	 var texto = document.getElementById("texto");
+    	 var array = new Array();
+    	 array = texto.value.split(",");
+    	 texto.value= array.join(" ");
+       }
+   	 var posicion =0;
+     function imprimeCaracter(){
+    	 var texto = document.getElementById("texto");
+    	 alert(texto.value.charAt(posicion));
+    	 posicion=posicion +1;
+     }
+     
+     function subCadena(){
+    	 var texto = document.getElementById("texto");
+    	 alert(texto.value.substring(3,6));
+       }
+</script>
+</head>
+<body>
+ <div>
+   <label for="numero1">Número1:</label><input type="text" id="numero1" value="" name="numero1"/>
+   <label for="numero2">Número2:</label><input type="text" id="numero2" value="" name="numero2"/>
+   <input type="button" name="concatenar" id="concatenar" 
+        value="Concatenar" onclick="concatenar();"/>
+  </div>
+  <div>
+   <label for="texto" >Texto:</label>
+   <textarea rows="5" cols="80" id="texto" name="texto"></textarea>
+  </div>
+  <div>
+    <input type="button" id="mayuscula" name="mayuscula" 
+         value="Mayúscula" onclick="convertirMayuscula();"/>
+    <input type="button" id="minuscula" name="minuscula" 
+         value="Minúscula" onclick="convertirMinuscula();"/>
+    <input type="button" id="trocear" name="trocear" 
+         value="Trocear" onclick="trocear();"/>     
+    <input type="button" id="unir" name="unir" 
+         value="Unir" onclick="unir();"/>
+    <input type="button" id="imprimeCaracter" name="imprimeCaracter" 
+         value="Imprime Caracter" onclick="imprimeCaracter();"/>
+     <input type="button" id="subCadena" name="subCadena" 
+         value="Subcadena 3,6" onclick="subCadena();"/>                           
+   </div>
+ <div>      
+    <h2>Respuestas</h2>
+    <label id="textoConcatenado">
+    </label>    
+ </div>   
+</body>
+</html>
+
+
+
+
+
+
+
+
+

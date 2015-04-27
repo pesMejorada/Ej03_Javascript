@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+  
+   function bajar() {
+	   var imagen= document.getElementById("imagen");
+       var posicionTop = parseInt(imagen.style.top);
+       var alturaBody= parseInt(window.innerHeight);
+	   if(posicionTop<=alturaBody)// solo si el top de la imagen es menor o igual q la altura de la ventana
+          posicionTop = posicionTop +10 +"px";
+	   else
+		   posicionTop= 0 + "px";
+       imagen.style.top =posicionTop;
+    }
+   function subir() {
+	   var imagen= document.getElementById("imagen");
+       var posicionTop = parseInt(imagen.style.top);
+       var alturaBody= parseInt(window.innerHeight);
+       if(posicionTop>=0){
+	      posicionTop = posicionTop -10 +"px";
+       }
+       else{
+    	   posicionTop =alturaBody -10 +"px";
+       }
+       imagen.style.top =posicionTop;
+    }	
+   function irIzquierda() {
+	   var imagen= document.getElementById("imagen");
+       var posicionLeft = parseInt(imagen.style.left);
+       var anchoBody= parseInt(document.body.clientWidth);
+       
+       if(posicionLeft >= 0)
+             posicionLeft = posicionLeft -10 +"px";
+       else
+    	     posicionLeft= anchoBody- 10 +"px";
+       imagen.style.left=posicionLeft;
+    }	
+   function irDerecha() {
+	   var imagen= document.getElementById("imagen");
+       var posicionLeft = parseInt(imagen.style.left);
+       
+       var anchoBody= parseInt(document.body.clientWidth);
+       if(posicionLeft<=anchoBody){
+              posicionLeft = posicionLeft +10 +"px";
+       }
+       else{
+    	   posicionLeft=0 +"px";
+       }
+      imagen.style.left=posicionLeft;
+    }	
+ function irDiagonal() {
+	   irDerecha();
+	   bajar();
+    }	
+ function irDiagonalInversa() {
+	   irIzquierda();
+	   subir();
+  }	
+</script>
+<style type="text/css">
+   #imagen{
+        width:40px;
+   }
+  
+</style>
+</head>
+<body>
+ <div>
+ <img class="estiloImagen" src="imagenes/espanha.jpg" 
+      alt="Bandera de España" title="Bandera de España" 
+      id="imagen"  style="position:absolute; top:40px; left:400px;z-index:-1;"/>
+       
+ </div>
+ <div style="z-index:0" >
+	<input type="button" value="Abajo" id="abajo" onclick="bajar();"/>
+	<input type="button" value="Arriba" id="arriba" onclick="subir();"/>
+	<input type="button" value="Izquierda" id="izquierda" onclick="irIzquierda();"/>
+	<input type="button" value="Derecha" id="derecha" onclick="irDerecha();"/>
+	<input type="button" value="Diagonal" id="diagonal" onclick="irDiagonal();"/>
+	<input type="button" value="Diagonal Inversa" id="diagonalInv" onclick="irDiagonalInversa();"/>
+	<input type="image" src="imagenes/espanha.jpg" style="width:30px; " id="botonGrafico"/>
+</div>
+</body>
+</html>
+
+
+
+
+

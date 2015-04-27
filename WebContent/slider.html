@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Slider</title>
+<script type="text/javascript">
+   var posicion=0;
+   function siguiente(){
+	   // cada vez q pulso.. cambio la foto....
+	  var banderas = new Array();
+      banderas=["espanha.jpg", "alemania.jpg","francias.jpg","italia.jpg"];
+	  var alternativos = new Array();
+	  alternativos=["Bandera de España", "Bandera de Alemania", "Bandera de Francia","Bandera de Italia"];
+      if(posicion< banderas.length -1) {// legth.. obtiene la longitud del array...
+	      posicion=posicion+1;
+		  var bandera = document.getElementById("bandera");
+		  bandera.src = "imagenes/" + banderas[posicion] ;
+		  bandera.alt = alternativos[posicion];
+		  bandera.title=alternativos[posicion];
+	  }
+   }
+      
+      function anterior(){
+    	  var banderas = new Array();
+          banderas=["espanha.jpg", "alemania.jpg","francias.jpg","italia.jpg"];
+    	  var alternativos = new Array();
+    	  alternativos=["Bandera de España", "Bandera de Alemania", "Bandera de Francia","Bandera de Italia"];
+          if(posicion>0 ) {
+    	      posicion=posicion-1;
+    		  var bandera = document.getElementById("bandera");
+    		  bandera.src = "imagenes/" + banderas[posicion] ;
+    		  bandera.alt = alternativos[posicion];
+    		  bandera.title=alternativos[posicion];
+    	  }
+      }
+  
+</script>
+</head>
+<body>
+     <input type="button" value="<-" id="anterior" 
+        onclick="anterior();"/>    
+    <img src="imagenes/espanha.jpg" id="bandera" 
+    alt="Bandera de España" title="Bandera de España"/>
+    <input type="button" value="->" id="siguiente" 
+        onclick="siguiente();"/>
+</body>
+</html>

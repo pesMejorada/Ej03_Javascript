@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function subir(){
+		   var imagen=document.getElementById("imagen");
+		   var  posicionArriba= parseInt(imagen.style.top);
+		   var posicionIzquierda=parseInt(imagen.style.left)
+		   posicionArriba= posicionArriba-20;
+		   imagen.style.top=  posicionArriba +"px";
+		 
+		  
+		 
+	   }
+	
+	
+	 
+	</script>
+</head>
+<body>
+ <div >
+ <img class="estiloImagen" src="imagenes/espanha.jpg" 
+      alt="Bandera de España" title="Bandera de España" 
+      id="imagen" Style="position:absolute;left:10px;top:125px;visibility:visible"
+        />
+       </div>
+<input type="button" value="Arriba" id="arriba" onclick="subir();"/>
+
+</body>
+</html>
