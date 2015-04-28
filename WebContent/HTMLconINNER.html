@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>INNER HTML</title>
+<script type="text/javascript">
+    function escribir(){
+    	var contenedor =document.getElementById("contenedor");
+    	contenedor.innerHTML="<article class='articulos'>"
+    		                 + "<h2>Título</h2>"
+    	                      +"<p>est el el texto dentro del párrafo</p>"
+    	                   
+    	                      +"<img src='imagenes/espanha.jpg' id='imagen'/>"
+    	                      +"</article>";
+    	var imagen = document.getElementById("imagen");
+    	imagen.style.width="25px";
+    }
+    function agregar(){
+    	var contenedor =document.getElementById("contenedor");
+    	contenedor.innerHTML = contenedor.innerHTML
+    	                       + "<article class='articulos'>"
+    	                       +"<h2>Titulo puesto con concatenacion</h2>";
+    	                       
+    	contenedor.innerHTML+="<p>Otro párrafo</p>" 
+    	                        +"</article>";
+     }
+    
+   function agregarConObjetos(){
+	   var contenedor = document.getElementById("contenedor");
+	   
+	   var titulo = document.createElement("h2");
+	   titulo.innerHTML="Titulo añadido con Objetos";
+	   
+	   var parrafo = document.createElement("p");
+	   parrafo.innerHTML= "Texto del parrafo";
+	   
+	   var articulo =document.createElement("article");
+	   articulo.setAttribute("class", "articulos");
+	   
+	   articulo.appendChild(titulo);
+	   articulo.appendChild(parrafo);
+	   
+	   contenedor.appendChild(articulo);
+	
+	}
+  
+</script>
+<style type="text/css">
+   .articulos{
+        background-color: blue;
+    }
+</style>
+</head>
+<body>
+   <div  id="contenedor">
+   
+  </div>
+   <input type="button" id="escribir" name="escribir" 
+   value="Escribir" onclick="escribir();"/>
+   <input type="button" id="agregar" name="agregar" 
+   value="Agregar" onclick="agregar();"/>
+   <input type="button" id="agregarConObjetos" name="agregarConObjetos" 
+   value="Agregar con Objetos" onclick="agregarConObjetos();"/>
+ </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
